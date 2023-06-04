@@ -2,21 +2,27 @@
 export interface Props {
 	name: string;
     position: string;
+    image: string;
 }
 
-const { name, position } = Astro.props;
+const { name, position, image } = Astro.props;
 
 ---
 
 <div class="h-screen gradient-bg">
     <div class="flex h-screen justify-center items-center text-white">
         <div class="text-center"> 
-            <h1 class="text-5xl mb-4">
+            <h1 class="text-6xl mb-4 font-bold">
                 Hi, I'm <span class="text-amber-400">{name}</span>
             </h1>
-            <h2 class="text-amber-400 text-2xl">
+            <h2 class="text-amber-400 text-3xl mb-5">
                 {position}
             </h2>
+            <div class="flex justify-center">
+                <div class="rounded-full border-4 p-4">
+                    <img class="h-48"  src={image} alt="Jezrel Dave Vector"/>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -27,7 +33,7 @@ const { name, position } = Astro.props;
     }
     
     .gradient-bg {
-        background: linear-gradient(-45deg, #ee7752, #4f36cf, #175ca6, #0a87c2);
+        background: linear-gradient(-45deg, #ee7752, #4f36cf, #175ca6, #0dd19d);
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
         height: 100vh;

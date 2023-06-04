@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Stacks from '../layouts/Stacks.astro';
 import Experiences from '../layouts/Experiences.astro';
+import Portfolio from '../layouts/Portfolio.astro';
 
 import Hero from '../components/Hero.astro';
 import Navigation from '../components/Navigation.astro';
@@ -11,6 +12,8 @@ import Timeline from '../components/Timeline.astro';
 import Card from '../components/Card.astro';
 
 import { inject } from '@vercel/analytics';
+
+import picvector from '../img/picvector.png'
 
 import html from '../img/stack/html.png'
 import css from '../img/stack/css.png'
@@ -37,6 +40,8 @@ import figma from '../img/stack/figma.png'
 import xd from '../img/stack/xd.png'
 import photoshop from '../img/stack/photoshop.png'
 
+
+
 inject();
 ---
 
@@ -46,10 +51,11 @@ inject();
 		<Hero
 			name="Jezrel Dave"
 			position="Full Stack Developer"
+			image={picvector}
 		/>
 		<Stacks id="stacks">
-			<div class="mb-5 text-xl font-medium text-cyan-700">Fundamental Languages</div>
-			<div class="flex flex-wrap gap-5 mb-10">
+			<div class="mb-5 text-xl text-center font-medium text-cyan-700">Fundamental Languages</div>
+			<div class="flex flex-wrap justify-center gap-5 mb-10">
 				<StackCard
 					name="HTML"
 					alt="HTML"
@@ -76,8 +82,8 @@ inject();
 					image={python}
 				/>
 			</div>
-			<div class="mb-5 text-xl font-medium text-cyan-700">Advance Languages and Frameworks</div>
-			<div class="flex flex-wrap gap-5 mb-10">
+			<div class="mb-5 text-xl text-center font-medium text-cyan-700">Frameworks</div>
+			<div class="flex flex-wrap justify-center gap-5 mb-10">
 				<StackCard
 					name="VueJS"
 					alt="VueJS"
@@ -109,8 +115,8 @@ inject();
 					image={react}
 				/>
 			</div>
-			<div class="mb-5 text-xl font-medium text-cyan-700">Skills</div>
-			<div class="flex flex-wrap gap-5 mb-10">
+			<div class="mb-5 text-xl text-center font-medium text-cyan-700">Skills</div>
+			<div class="flex flex-wrap justify-center gap-5 mb-10">
 				<StackCard
 					name="Web Development"
 					alt="Web Development"
@@ -127,8 +133,8 @@ inject();
 					image={git}
 				/>
 			</div>
-			<div class="mb-5 text-xl font-medium text-cyan-700">Softwares and Programs</div>
-			<div class="flex flex-wrap gap-5 mb-10">
+			<div class="mb-5 text-xl text-center font-medium text-cyan-700">Softwares and Programs</div>
+			<div class="flex flex-wrap justify-center gap-5 mb-10">
 				<StackCard
 					name="Visual Studio Code"
 					alt="Visual Studio Code"
@@ -174,6 +180,7 @@ inject();
 		<Experiences>
 			<Timeline></Timeline>
 		</Experiences>
+		<Portfolio></Portfolio>
 	</main>
 </Layout>
 
