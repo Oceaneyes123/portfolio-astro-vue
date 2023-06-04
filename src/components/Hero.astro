@@ -1,0 +1,28 @@
+---
+export interface Props {
+	name: string;
+    position: string;
+}
+
+const { name, position } = Astro.props;
+
+---
+
+<div class="h-screen hero-section">
+    <div class="flex h-screen justify-center items-center text-white">
+        <div class="text-center"> 
+            <h1 class="text-5xl mb-4">
+                Hi, I'm <span class="text-amber-400">{name}</span>
+            </h1>
+            <h2 class="text-amber-400 text-2xl">
+                {position}
+            </h2>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hero-section{
+        background-color: #1b262c;
+    }
+</style>
