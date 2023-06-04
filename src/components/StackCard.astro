@@ -8,8 +8,60 @@ export interface Props {
 const { name, image, alt } = Astro.props;
 ---
 
-<div class="flex flex-col justify-center items-center border border-solid border-sky-500 rounded-lg p-5 w-48">
+<div class="card flex flex-col justify-center items-center  rounded-lg p-5 w-48">
     <img src={image} alt={alt} class="h-20">
 
     <div class="text-center pt-5">{name}</div>
 </div>
+
+<style>
+    .card {
+        --elevation: 3;
+        --epx: calc(var(--elevation) * 1px);
+        
+        /* these 2 shadows serve as a border for  0-1 elevation    */
+        --shadow1: 0 0 1px rgba(0, 0, 0, .1);
+        --shadow2: 0 1px 2px rgba(0, 0, 0, .08);
+        
+        --offset-y: calc(var(--epx) + 1px);
+        --blur: calc(var(--epx) * 2);
+        --spread: calc(var(--epx) * .3);
+        --shadow3: 
+            0 var(--offset-y) 
+            var(--blur) 
+            var(--spread) 
+            rgba(0, 0, 0, 0.2);
+        
+        box-shadow: 
+            var(--shadow1),
+            var(--shadow2),
+            var(--shadow3);
+
+
+    }
+    
+    .card:hover {
+        --elevation: 0;
+        --epx: calc(var(--elevation) * 1px);
+        
+        /* these 2 shadows serve as a border for  0-1 elevation    */
+        --shadow1: 0 0 1px rgba(0, 0, 0, .1);
+        --shadow2: 0 1px 2px rgba(0, 0, 0, .08);
+        
+        --offset-y: calc(var(--epx) + 1px);
+        --blur: calc(var(--epx) * 2);
+        --spread: calc(var(--epx) * .3);
+        --shadow3: 
+            0 var(--offset-y) 
+            var(--blur) 
+            var(--spread) 
+            rgba(0, 0, 0, 0.2);
+        
+        box-shadow: 
+            var(--shadow1),
+            var(--shadow2),
+            var(--shadow3);
+
+
+    }
+</style>
