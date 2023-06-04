@@ -1,10 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Stacks from '../layouts/Stacks.astro';
+import Experiences from '../layouts/Experiences.astro';
 
 import Hero from '../components/Hero.astro';
 import Navigation from '../components/Navigation.astro';
 import StackCard from '../components/StackCard.astro';
+import Timeline from '../components/Timeline.astro';
 
 import Card from '../components/Card.astro';
 
@@ -38,7 +40,7 @@ import photoshop from '../img/stack/photoshop.png'
 inject();
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Portfolio | Jezrel Dave">
 	<Navigation></Navigation>
 	<main>
 		<Hero
@@ -169,6 +171,9 @@ inject();
 				/>
 			</div>
 		</Stacks>
+		<Experiences>
+			<Timeline></Timeline>
+		</Experiences>
 	</main>
 </Layout>
 
