@@ -1,10 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Stacks from '../layouts/Stacks.astro';
+
 import Hero from '../components/Hero.astro';
 import Navigation from '../components/Navigation.astro';
+import StackCard from '../components/StackCard.astro';
+
 import Card from '../components/Card.astro';
 
 import { inject } from '@vercel/analytics';
+
+import html from '../img/stack/html.png'
+import css from '../img/stack/css.png'
+import js from '../img/stack/js.png'
+import java from '../img/stack/java.png'
+import python from '../img/stack/python.png'
+
+import vue from '../img/stack/vue.png'
+import vuetify from '../img/stack/vuetify.svg'
+import node from '../img/stack/node.png'
+import laravel from '../img/stack/laravel.png'
+import codeigniter from '../img/stack/codeigniter.svg'
+import react from '../img/stack/react.png'
+
+import web from '../img/stack/web.png'
+import android from '../img/stack/android.png'
+import git from '../img/stack/git.png'
+
+import vscode from '../img/stack/vscode.svg'
+import github from '../img/stack/github.png'
+import bitbucket from '../img/stack/bitbucket.png'
+import jira from '../img/stack/jira.png'
+import figma from '../img/stack/figma.png'
+import xd from '../img/stack/xd.png'
+import photoshop from '../img/stack/photoshop.png'
 
 inject();
 ---
@@ -12,17 +41,134 @@ inject();
 <Layout title="Welcome to Astro.">
 	<Navigation></Navigation>
 	<main>
-		<!-- <ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-		</ul> -->
 		<Hero
 			name="Jezrel Dave"
 			position="Full Stack Developer"
 		/>
+		<Stacks id="stacks">
+			<div class="mb-5 text-xl font-medium text-cyan-700">Fundamental Languages</div>
+			<div class="flex flex-wrap gap-5 mb-10">
+				<StackCard
+					name="HTML"
+					alt="HTML"
+					image={html}
+				/>
+				<StackCard
+					name="CSS"
+					alt="CSS"
+					image={css}
+				/>
+				<StackCard
+					name="Javascript"
+					alt="Javascript"
+					image={js}
+				/>
+				<StackCard
+					name="Java"
+					alt="Java"
+					image={java}
+				/>
+				<StackCard
+					name="Python"
+					alt="Python"
+					image={python}
+				/>
+			</div>
+			<div class="mb-5 text-xl font-medium text-cyan-700">Advance Languages and Frameworks</div>
+			<div class="flex flex-wrap gap-5 mb-10">
+				<StackCard
+					name="VueJS"
+					alt="VueJS"
+					image={vue}
+				/>
+				<StackCard
+					name="Vuetify"
+					alt="Vuetify"
+					image={vuetify}
+				/>
+				<StackCard
+					name="NodeJS"
+					alt="Node NodeJS"
+					image={node}
+				/>
+				<StackCard
+					name="Laravel"
+					alt="Laravel"
+					image={laravel}
+				/>
+				<StackCard
+					name="CodeIgniter"
+					alt="Code Igniter"
+					image={codeigniter}
+				/>
+				<StackCard
+					name="React JS"
+					alt="React JS"
+					image={react}
+				/>
+			</div>
+			<div class="mb-5 text-xl font-medium text-cyan-700">Skills</div>
+			<div class="flex flex-wrap gap-5 mb-10">
+				<StackCard
+					name="Web Development"
+					alt="Web Development"
+					image={web}
+				/>
+				<StackCard
+					name="Android/Mobile Development"
+					alt="Android/Mobile Development"
+					image={android}
+				/>
+				<StackCard
+					name="Git"
+					alt="Git"
+					image={git}
+				/>
+			</div>
+			<div class="mb-5 text-xl font-medium text-cyan-700">Softwares and Programs</div>
+			<div class="flex flex-wrap gap-5 mb-10">
+				<StackCard
+					name="Visual Studio Code"
+					alt="Visual Studio Code"
+					image={vscode}
+				/>
+				<StackCard
+					name="Android Studio"
+					alt="Android Studio"
+					image={android}
+				/>
+				<StackCard
+					name="Github"
+					alt="Github"
+					image={github}
+				/>
+				<StackCard
+					name="Bitbucket"
+					alt="Bitbucket"
+					image={bitbucket}
+				/>
+				<StackCard
+					name="Jira (Atlassian)"
+					alt="Jira Atlassian"
+					image={jira}
+				/>
+				<StackCard
+					name="Figma"
+					alt="Figma"
+					image={figma}
+				/>
+				<StackCard
+					name="Adobe XD"
+					alt="Adobe XD"
+					image={xd}
+				/>
+				<StackCard
+					name="Adobe Photoshop"
+					alt="Adobe Photoshop"
+					image={photoshop}
+				/>
+			</div>
+		</Stacks>
 	</main>
 </Layout>
 
