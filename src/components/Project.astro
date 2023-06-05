@@ -1,0 +1,28 @@
+---
+
+export interface Props {
+	name: string;
+    details: string;
+    stacks: Array<string>;
+    images: Array<string>
+}
+
+const { name, details, stacks, images } = Astro.props as Props;
+---
+
+
+<div class="bg-gray-900 p-5 md:w-9/12">
+    <div class="flex flex-col md:flex-row text-left">
+        <div class="md:w-1/2 w-full mx-auto">
+            <h2 class="text-2xl font-bold mb-5">{name}</h2>
+            <p class="mb-10">{details}</p>
+            <div class="font-medium">Stacks Used</div>
+            <ul class="pl-5">{stacks.map(stack => <li>-{stack}</li>)}</ul>
+        </div>
+        <div class="md:w-1/2 w-full mx-auto ">
+            <div class=" flex flex-wrap gap-5">
+                {images.map(imagesrc => <img src={imagesrc} alt="Android Image" class="md:w-2/12"/>)}
+            </div>
+        </div>
+    </div>
+</div>

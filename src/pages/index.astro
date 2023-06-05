@@ -8,6 +8,8 @@ import Hero from '../components/Hero.astro';
 import Navigation from '../components/Navigation.astro';
 import StackCard from '../components/StackCard.astro';
 import Timeline from '../components/Timeline.astro';
+import Project from '../components/Project.astro';
+import ProjectWeb from '../components/ProjectWeb.astro';
 
 import Card from '../components/Card.astro';
 
@@ -40,19 +42,35 @@ import figma from '../img/stack/figma.png'
 import xd from '../img/stack/xd.png'
 import photoshop from '../img/stack/photoshop.png'
 
+import android1 from '../img/android/android1.png'
+import android2 from '../img/android/android2.png'
+import android3 from '../img/android/android3.png'
+import android4 from '../img/android/android4.png'
+import android5 from '../img/android/android5.png'
+import android6 from '../img/android/android6.png'
+import android7 from '../img/android/android7.png'
+import android8 from '../img/android/android8.png'
 
+import bhen2 from '../img/web/bhen2.png'
+import megatalk from '../img/web/megatalk.png'
+import ebook from '../img/web/ebook.png'
+
+import htmlite from '../img/personal/htmlite.png'
+import portfolio from '../img/personal/portfolio.png'
+import throughtheglass from '../img/personal/throughtheglass.png'
 
 inject();
 ---
 
 <Layout title="Portfolio | Jezrel Dave">
 	<Navigation></Navigation>
-	<main>
+	<main id="home">
 		<Hero
 			name="Jezrel Dave"
 			position="Full Stack Developer"
 			image={picvector}
-		/>
+		>
+		</Hero>
 		<Stacks id="stacks">
 			<div class="mb-5 text-xl text-center font-medium text-cyan-700">Fundamental Languages</div>
 			<div class="flex flex-wrap justify-center gap-5 mb-10">
@@ -177,10 +195,75 @@ inject();
 				/>
 			</div>
 		</Stacks>
-		<Experiences>
+		<Experiences id="experience">
 			<Timeline></Timeline>
 		</Experiences>
-		<Portfolio></Portfolio>
+		<div id="portfolio"></div>
+		<Portfolio>
+			<div class="mb-5 text-xl text-center font-medium text-cyan-700">Android Development</div>
+			<div class="flex justify-center text-white text-center mb-10">
+				<Project
+					name="U Education"
+					details="U Education is a mobile application providing B2B services for online English academies. This was used by korean students of the company."
+					stacks={["Java","XML"]}
+					images={[android1, android2, android3, android4, android5, android6, android7, android8]}
+				>
+			</div>
+			<div class="mb-5 text-xl text-center font-medium text-cyan-700">Web Development</div>
+			<div class="flex flex-wrap md:flex-nowrap justify-center text-white text-center mb-10 gap-10">
+				<ProjectWeb
+					name="Megatalking - Official Website"
+					details="This is a website to be used as an LMS or a Learning Management System to provide smooth coordination between native speaking instructors, domestic operators, and clients."
+					stacks={["Vuejs", "Vuetify", "Laravel", "HTML", "CSS", "JavaScript"]}
+					image={megatalk}
+					alt="Megataking"
+					url="https://megatalking.co.kr/"
+				/>
+				<ProjectWeb
+					name="Blackhole Korea - Official Website"
+					details="A landing page of a client company."
+					stacks={["HTML", "CSS", "JavaScript", "Bootstrap"]}
+					image={bhen2}
+					alt="Blackhole Bhen"
+					url="https://bhen.co.kr/"
+				/>
+				<ProjectWeb
+					name="UEDU e-Books"
+					details="A library of materials and references suitable for the course chosen by the client of MegaTalking."
+					stacks={["Vuejs", "Vuetify", "Laravel", "HTML", "CSS", "JavaScript"]}
+					image={ebook}
+					alt="Ueducation Ebook"
+					url="https://ueducms.org/webbooks/#/book-list?enc=MDAxfHN0dWRlbnR8bWVnYXRhbGtpbmc%3D%2F"
+				/>
+			</div>
+			<div class="mb-5 text-xl text-center font-medium text-cyan-700">Personal Projects</div>
+			<div class="flex flex-wrap md:flex-nowrap justify-center text-white text-center mb-10 gap-10">
+				<ProjectWeb
+					name="Jezrel Dave Sondia - Personal Portfolio"
+					details="A portfolio website by Jezrel Dave Sondia"
+					stacks={["Vuejs", "Vuetify", "HTML", "CSS", "JavaScript"]}
+					image={portfolio}
+					alt="Jezrel Dave Sondia - Personal Portfolio"
+					url="https://jezreldave.vercel.app/"
+				/>
+				<ProjectWeb
+					name="HTMLite - HTML & CSS lite compiler"
+					details="A HTML and CSS compiler made with Vue"
+					stacks={["Vuejs", "Vuetify", "HTML", "CSS", "JavaScript"]}
+					image={htmlite}
+					alt="HTMLite - HTML & CSS lite compiler"
+					url="https://htmlite.vercel.app/"
+				/>
+				<ProjectWeb
+					name="Through the Glass Creatives - Blog Page"
+					details="A simple blog page made for Through the Glass Creatives"
+					stacks={["Vuejs", "Vuetify", "HTML", "CSS", "JavaScript"]}
+					image={throughtheglass}
+					alt="Through the Glass Creatives - Blog Page"
+					url="https://throughtheglasscreatives.vercel.app/"
+				/>
+			</div>
+		</Portfolio>
 	</main>
 </Layout>
 
