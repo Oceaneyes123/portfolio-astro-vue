@@ -1,4 +1,6 @@
 ---
+import '@fontsource/poppins';
+
 import Layout from '../layouts/Layout.astro';
 import Stacks from '../layouts/Stacks.astro';
 import Experiences from '../layouts/Experiences.astro';
@@ -266,4 +268,14 @@ inject();
 		</Portfolio>
 	</main>
 </Layout>
+
+<style is:global>
+	html {
+		scroll-behavior: smooth;
+	}
+	
+	body{
+		font-family: 'Poppins', sans-serif;
+	}
+</style>
 
