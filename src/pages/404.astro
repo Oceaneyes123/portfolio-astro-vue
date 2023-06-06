@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout title="Not Found"
+    metacontent="Page Not Found">
+	<Navigation></Navigation>
+    <div class="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
+        <h1 class="text-9xl font-extrabold text-white tracking-widest">404</h1>
+        <div class="text-white font-regular text-xl tracking-wide mt-5">Sorry, this is the void. Nothing's here.</div>
+        <button class="mt-5">
+        <a
+            class="relative inline-block text-sm font-medium text-[#FF6A3D] group active:text-orange-500 focus:outline-none focus:ring"
+        >
+            <span
+            class="absolute inset-0 transition-transform translate-x-0.5 translate-y-0.5 bg-[#FF6A3D] group-hover:translate-y-0 group-hover:translate-x-0"
+            ></span>
+             <a class="relative block px-8 py-3 bg-[#1A2238] border border-amber-500 rounded-xl text-amber-500 font-medium" href="/">Go Home</a>
+        </a>
+        </button>
+    </div>
+</Layout>

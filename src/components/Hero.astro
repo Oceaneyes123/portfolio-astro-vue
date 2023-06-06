@@ -1,11 +1,15 @@
 ---
+
+import { Image } from 'astro:assets'
 export interface Props {
 	name: string;
     position: string;
-    image: string;
+    image: ImageMetadata;
 }
 
-const { name, position, image } = Astro.props;
+const { name, position, image} = Astro.props;
+
+
 
 ---
 
@@ -20,7 +24,12 @@ const { name, position, image } = Astro.props;
             </h2>
             <div class="flex justify-center">
                 <div class="rounded-full border-4 p-4">
-                    <img class="h-48"  src={image} alt="Jezrel Dave Vector"/>
+                    <Image 
+                        width={200}
+                        src={image} 
+                        alt="Jezrel Dave Vector"
+                        format="avif"
+                    />
                 </div>
             </div>
         </div>

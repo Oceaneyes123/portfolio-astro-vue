@@ -1,10 +1,10 @@
 ---
-
+import { Image } from 'astro:assets'
 export interface Props {
 	name: string;
     details: string;
     stacks: Array<string>;
-    image: string;
+    image: ImageMetadata;
     alt: string;
     url: string;
 }
@@ -17,7 +17,7 @@ export interface Props {
     <div class="flex flex-col text-left mb-auto">
         <div class="w-full mb-5">
             <div class="flex justify-center">
-               <img src={image} alt={alt} class="h-48 w-auto">
+               <Image src={image} width={1080} format="avif"  alt={alt} class="h-48 w-auto">
             </div>
         </div>
         <div class="my-auto mb-auto flex-grow-1">

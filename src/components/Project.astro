@@ -1,10 +1,12 @@
 ---
 
+import { Image } from 'astro:assets'
+
 export interface Props {
 	name: string;
     details: string;
     stacks: Array<string>;
-    images: Array<string>
+    images: Array<ImageMetadata>
 }
 
 const { name, details, stacks, images } = Astro.props as Props;
@@ -21,7 +23,7 @@ const { name, details, stacks, images } = Astro.props as Props;
         </div>
         <div class="md:w-1/2 w-full mx-auto ">
             <div class=" flex flex-wrap gap-5 justify-center">
-                {images.map(imagesrc => <img src={imagesrc} alt="Android Image" class="h-48 md:h-auto md:w-2/12"/>)}
+                {images.map(imagesrc => <div class="12/12 md:w-2/12"><Image src={imagesrc} width={400} alt="Android Image"/></div>)}
             </div>
         </div>
     </div>

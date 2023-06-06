@@ -12,5 +12,8 @@ export default defineConfig({
     config: {
       forward: ["dataLayer.push"]
     }
-  }), sitemap()]
+  }), sitemap()],
+  experimental: {
+    assets: true
+   }
 });
