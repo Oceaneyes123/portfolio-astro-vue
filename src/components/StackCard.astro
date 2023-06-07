@@ -4,13 +4,15 @@ export interface Props {
 	name: string;
     image: ImageMetadata;
     alt: string;
+    aspectRatio: number;
+    width: number;
 }
 
-const { name, image, alt } = Astro.props;
+const { name, image, alt, aspectRatio, width } = Astro.props;
 ---
 
 <div class="card flex flex-col justify-center items-center  rounded-lg p-5 w-48">
-    <Image src={image} alt={alt} width={80} format="avif" class="h-20"/>
+    <Image src={image} alt={alt} width={width} height={aspectRatio} format="avif"/>
 
     <div class="text-center pt-5">{name}</div>
 </div>

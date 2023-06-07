@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jezreldave.com/sitemap-0.xml
