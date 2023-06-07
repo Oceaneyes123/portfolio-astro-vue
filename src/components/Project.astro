@@ -13,7 +13,7 @@ const { name, details, stacks, images } = Astro.props as Props;
 ---
 
 
-<div class="bg-gray-900 p-5 md:w-9/12">
+<div class="bg-gray-900 p-5 md:w-9/12 rounded-3xl card">
     <div class="flex flex-col md:flex-row text-left">
         <div class="md:w-1/2 w-full mx-auto mb-5">
             <h2 class="text-2xl font-bold mb-5">{name}</h2>
@@ -28,3 +28,30 @@ const { name, details, stacks, images } = Astro.props as Props;
         </div>
     </div>
 </div>
+
+<style>
+    .card {
+        --elevation: 5;
+        --epx: calc(var(--elevation) * 1px);
+        
+        /* these 2 shadows serve as a border for  0-1 elevation    */
+        --shadow1: 0 0 1px rgba(0, 0, 0, .1);
+        --shadow2: 0 1px 2px rgba(0, 0, 0, .08);
+        
+        --offset-y: calc(var(--epx) + 1px);
+        --blur: calc(var(--epx) * 2);
+        --spread: calc(var(--epx) * .3);
+        --shadow3: 
+            0 var(--offset-y) 
+            var(--blur) 
+            var(--spread) 
+            rgba(0, 0, 0, 0.2);
+        
+        box-shadow: 
+            var(--shadow1),
+            var(--shadow2),
+            var(--shadow3);
+
+
+    }
+</style>
