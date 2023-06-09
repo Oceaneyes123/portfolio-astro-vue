@@ -1,0 +1,56 @@
+---
+layout: "../../layouts/Blog.astro"
+pageTitle: Git Pull vs Git Fecth | Blog
+title: Understanding the Difference Between 'git pull' and 'git fetch'
+date: 06-08-2023
+author: Jezrel Dave Sondia
+image: {
+    src: "../src/img/blogs/gitpullfetch.png",
+    alt: "Git Pull vs Git Fetch"
+}
+description: "Git Pull vs Git Fetch: Understanding the Difference Between git pull and git fetch"
+category: git
+---
+
+When working with Git, a powerful version control system, it's essential to understand the various commands available to manage your repositories effectively. 
+
+Two commonly used commands are ```git pull``` and 'git fetch.' While they both serve the purpose of updating your local repository with changes from a remote repository, there are significant differences between them. We'll explore the disparities between ```git pull``` and ```git fetch``` and discuss when to use each command.
+
+## Git Fetch:
+
+```git fetch``` is primarily used to update the remote-tracking branches in your local repository without automatically merging them. It allows you to retrieve any changes made by other contributors without affecting your current working branch. 
+
+Here's how ```git fetch``` works:
+
+**Fetching Remote Changes:** 
+
+When you run ```git fetch```, Git contacts the remote repository specified (usually the origin) and fetches any new commits, branches, or tags from it.
+Updating Remote-Tracking Branches: The fetched changes are stored in your local repository, but they don't affect your working branch. Instead, Git updates your remote-tracking branches to reflect the latest state of the remote repository.
+
+**Independent Branches:** 
+
+Since ```git fetch``` doesn't merge the fetched changes automatically, you can review them separately and decide how to incorporate them into your work.
+
+## Git Pull:
+
+
+
+```git pull``` combines two actions: fetching remote changes and automatically merging them into your current branch. It effectively updates your working branch with the latest changes from the remote repository. 
+
+Here's how ```git pull``` works:
+
+**Fetching Remote Changes:**
+
+Similar to 'git fetch,' ```git pull``` contacts the remote repository and retrieves any new commits, branches, or tags.
+Merging Remote Changes: After fetching the changes, Git automatically merges them into your current branch. If there are conflicts between your local changes and the remote changes, Git will prompt you to resolve them before completing the merge.
+
+**Directly Updates Working Branch:** 
+
+Unlike 'git fetch,' ```git pull``` updates your working branch immediately, making it a convenient way to incorporate remote changes into your local work.
+
+**When to Use Each Command:**
+
+```git fetch```: Use ```git fetch``` when you want to check for updates from the remote repository but prefer to review and merge them manually. This is especially useful if you're collaborating with other developers and want to ensure you have the latest changes without immediately integrating them into your work.
+
+```git pull```: Opt for ```git pull``` when you're ready to incorporate the changes from the remote repository directly into your working branch. It's convenient for quickly updating your local branch with the latest commits from the remote repository.
+

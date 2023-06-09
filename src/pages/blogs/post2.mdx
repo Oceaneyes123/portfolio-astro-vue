@@ -1,0 +1,82 @@
+---
+layout: "../../layouts/Blog.astro"
+pageTitle: Email Validation in HTML and Javascript | Blog
+title: Multiple Ways to Validate Email Address Programatically
+date: 06-10-2023
+author: Jezrel Dave Sondia
+image: {
+    src: "../src/img/blogs/emailvalidate.png",
+    alt: "Git Pull vs Git Fetch"
+}
+description: "Multiple Ways to Validate Email Address Programatically"
+category: javascript
+---
+
+Email validation is an essential aspect of web development when it comes to ensuring the accuracy and integrity of user-submitted data. In JavaScript, there are several techniques and methods you can employ to validate email addresses effectively. In this blog post, we will explore different approaches to validate email addresses using JavaScript, providing you with a comprehensive guide to implement this crucial functionality in your web applications.
+
+
+## Regular Expressions Method:
+
+```javascript
+function validateEmail(email) {
+  // Regular expression pattern for email validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+  // Check if the email matches the pattern
+  return emailPattern.test(email);
+}
+
+// Example usage
+const email = "example@email.com";
+const isValidEmail = validateEmail(email);
+console.log(isValidEmail); // Output: true or false
+```
+
+This function takes an email as input and uses a regular expression pattern (emailPattern) to validate it. The pattern ensures that the email contains at least one character before and after the ```"@"``` symbol and includes a ```"."``` symbol followed by at least one character.
+
+
+To use the function, simply pass an email address as an argument to ```validateEmail```. The function will return true if the email is valid and false otherwise. In the example above, the ```isValidEmail``` variable stores the result of email validation for demonstration purposes. You can replace the ```email``` variable with any email address you want to validate.
+
+
+
+## HTML5 Input Type:
+
+```html
+ <form>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <button type="submit">Submit</button>
+  </form>
+```
+
+
+This example demonstrates email validation using HTML5's built-in email input type. The input element has ```type="email"```, which triggers the browser's built-in email validation. The required attribute ensures that the user must provide an email address before submitting the form.
+
+*Note: This validation is performed on the client-side and can be bypassed by users. It is important to also perform server-side validation to ensure the integrity of the submitted data.*
+
+## JavaScript Library/Plugin:
+
+
+You can also use NPMs. A great example is [email-validator](https://www.npmjs.com/package/email-validator)
+
+**Install via NPM:**
+
+```
+npm install email-validator
+```
+
+**Usage** 
+
+-Javascript:
+
+```javascript
+var validator = require("email-validator");
+validator.validate("test@email.com"); // true
+```
+
+-TypeScript
+
+```typescript
+import * as EmailValidator from 'email-validator';
+EmailValidator.validate("test@email.com"); // true
+```

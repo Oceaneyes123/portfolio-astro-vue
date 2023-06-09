@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets'
+
+const { blog } = Astro.props
+
+const {layout, title, date, author, image, description, category} = blog.frontmatter
+
+
+---
+
+<div class="bg-gray-800 rounded-2xl max-w-md p-5">
+    <a href={blog.url}>
+        <Image src={image.src} alt={image.alt} width={1920} height={1080} format="avif"/>
+    </a>
+    <h1 class="text-white font-bold my-5 text-xl hover:text-amber-400">
+        <a href={blog.url}>{title}</a>
+    </h1>
+    <div class="rounded-full px-5 py-1 bg-purple-700 text-white inline-block uppercase">
+        {category}
+    </div>
+</div>

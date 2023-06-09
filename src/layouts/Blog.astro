@@ -1,0 +1,74 @@
+---
+import Layout from "./Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import { slugify } from "../js/utils.js"
+
+import { Image } from 'astro:assets'
+
+
+const { frontmatter } = Astro.props
+
+const {pageTitle, title,  date, author, image, description, category} = frontmatter
+---
+
+<Layout title={pageTitle}
+    metacontent={description}>
+    <Navigation></Navigation>
+    <div class="pt-28 px-10">
+        <h1 class="text-center text-4xl font-bold mb-10">
+            {title}
+        </h1>
+         <!-- <p class="mb-10 text-center">by {author} | {date}</p> -->
+        <div class="flex justify-center items-center mb-10">
+            <Image src={image.src} width={1000} height={300} alt={image.alt} format="avif"></Image>
+        </div>
+         <div class="flex justify-center">
+            <div class="md:w-8/12 xl:w-5/12">
+                <div class="uppercase text-left mb-5">
+                    <span class="bg-purple-800 text-white px-5 py-2 rounded-3xl category-text">
+                     <a href={`/category/${slugify(category)}`}>{category}</a>
+                    </span> 
+                 </div>
+                 <div class="content-post">
+                    <slot></slot>
+                 </div>
+            </div>
+         </div>
+        
+    </div>
+</Layout>
+
+<style>
+    .content-post :global(p){
+        margin-bottom: 20px;
+    }
+    
+    .content-post :global(h1){
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .content-post :global(h2){
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    
+    .content-post :global(p code){
+        color: #ff5252;
+        font-weight: bold;
+    }
+    
+    .content-post :global(pre){
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .content-post :global(a){
+        color: #2464d4;
+    }
+    
+</style>
+
+
