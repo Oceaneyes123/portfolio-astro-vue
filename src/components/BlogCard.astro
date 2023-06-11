@@ -3,8 +3,7 @@ import { Image } from 'astro:assets'
 
 const { blog } = Astro.props
 
-const {layout, title, date, author, image, description, category} = blog.frontmatter
-
+const {layout, title, date, author, image, description, categories} = blog.frontmatter
 
 ---
 
@@ -15,7 +14,9 @@ const {layout, title, date, author, image, description, category} = blog.frontma
     <h1 class="text-white font-bold my-5 text-xl hover:text-amber-400">
         <a href={blog.url}>{title}</a>
     </h1>
-    <div class="rounded-full px-5 py-1 bg-purple-700 text-white inline-block uppercase">
-        {category}
-    </div>
+    {
+        categories.map(category =>  <div class="rounded-full px-5 py-1 bg-purple-700 text-white inline-block uppercase mr-3">
+            {category}
+        </div>
+    )} 
 </div>

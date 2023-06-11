@@ -16,9 +16,8 @@ const { title, metacontent } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<!-- Google tag (gtag.js) -->
+		
 		<script type="text/partytown" defer src="/_vercel/insights/script.js"></script>
-		<!-- <script type="text/partytown" src="https://smtpjs.com/v3/smtp.js"></script> -->
 		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-G0Q4NQGWCH"></script>
 		<script type="text/partytown">
 			window.dataLayer = window.dataLayer || [];
@@ -27,6 +26,7 @@ const { title, metacontent } = Astro.props;
 
 			gtag('config', 'G-G0Q4NQGWCH');
 		</script>
+		
 	</head>
 	<body>
 		<slot />

@@ -8,7 +8,7 @@ import { Image } from 'astro:assets'
 
 const { frontmatter } = Astro.props
 
-const {pageTitle, title,  date, author, image, description, category} = frontmatter
+const {pageTitle, title,  date, author, image, description, categories} = frontmatter
 ---
 
 <Layout title={pageTitle}
@@ -24,11 +24,17 @@ const {pageTitle, title,  date, author, image, description, category} = frontmat
         </div>
          <div class="flex justify-center">
             <div class="md:w-8/12 xl:w-5/12">
-                <div class="uppercase text-left mb-5">
-                    <span class="bg-purple-800 text-white px-5 py-2 rounded-3xl category-text">
-                     <a href={`/category/${slugify(category)}`}>{category}</a>
-                    </span> 
-                 </div>
+                <div class="flex gap-x-3">
+                    {
+                        categories.map(category =>  
+                        <div class="uppercase text-left mb-5">
+                            <span class="bg-purple-800 text-white px-5 py-2 rounded-3xl category-text">
+                            <a href={`/category/${slugify(category)}`}>{category}</a>
+                            </span> 
+                        </div>
+                     )}
+                </div>
+               
                  <div class="content-post">
                     <slot></slot>
                  </div>
