@@ -1,0 +1,86 @@
+---
+layout: "../../layouts/Blog.astro"
+pageTitle: Ultimate Guide To Vertically Centered Content | Blog
+title: Ultimate Guide To Vertically Centered Content
+date: 06-11-2023
+author: Jezrel Dave Sondia
+image: {
+    src: "/img/blogs/centeredtext.png",
+    alt: "Git Pull vs Git Fetch"
+}
+description: "Multiple ways to center the content of div using HTML and CSS"
+categories: ['html', 'css']
+---
+
+Let's start with your HTML:
+
+```html
+<div class="container">
+    <div class="content">Centered Content</div>
+</div>
+```
+
+When it comes to vertically centering text, there are multiple approaches you can take depending on the context and requirements of your project. Here are four common methods:
+
+**Using CSS Flexbox:**
+
+Flexbox is a CSS layout model that provides a simple way to vertically center elements. You can apply the following CSS to the parent container of the text:
+
+```css
+Copy code
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
+
+This will center the text both vertically and horizontally within the container.
+
+**Using CSS Grid:**
+
+CSS Grid is another CSS layout model that allows you to create grid-based layouts. To vertically center text using CSS Grid, you can define a grid container and apply the following CSS to it:
+
+```css
+.container {
+  display: grid;
+  place-items: center;
+}
+```
+
+This will center the text both vertically and horizontally within the container.
+
+**Using CSS Table Display:**
+
+You can also use the table display properties to vertically center text. Apply the following CSS to the parent container of the text:
+
+```css
+.container {
+  display: table;
+  height: 100%; /* Set a fixed height or use a parent with a defined height */
+}
+
+.content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center; /* For horizontal centering */
+}
+```
+
+This approach simulates a table structure and vertically centers the content within the table cell.
+
+**Using CSS Positioning:**
+
+If you know the height of the container, you can use absolute positioning to vertically center the text. Apply the following CSS to the text element:
+
+```css
+.content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+```
+
+This will move the text element 50% down from the top of its containing element and then shift it back up by 50% of its own height, effectively centering it vertically.
+
+Choose the method that suits your project requirements and the browser compatibility you need to support.
