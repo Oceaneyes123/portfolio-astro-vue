@@ -2,13 +2,13 @@
 
 ---
 
-<div class="container bg-sky-200 mx-auto w-full h-full">
+<div class="container bg-transparent mx-auto w-full h-full">
     <div class="relative wrap overflow-hidden md:p-10 h-full">
-      <div class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border timeline-line"></div>
+      <div class="border-2-2 absolute border-opacity-50 border-white h-full border timeline-line"></div>
       <!-- right timeline -->
       <div class="mb-8 flex justify-start md:justify-between gap-x-5 items-center w-full right-timeline">
-        <div class="order-1 w-5/12 hidden md:block text-end">July 2022 - Present</div>
-        <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+        <div class="order-1 w-5/12 hidden md:block text-end text-white">July 2022 - Present</div>
+        <div class="z-20 flex items-center order-1 bg-yellow-400 shadow-xl w-8 h-8 rounded-full">
           <h1 class="mx-auto font-semibold text-lg text-white"></h1>
         </div>
         <div class="order-1 rounded-xl shadow-xl w-10/12 md:w-5/12">
@@ -31,8 +31,8 @@
   
       <!-- left timeline -->
       <div class="mb-8 flex justify-start md:justify-between gap-x-5 flex-row md:flex-row-reverse items-center w-full left-timeline">
-        <div class="order-1 w-5/12 hidden md:block">Jan 2019 - July 2022</div>
-        <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+        <div class="order-1 w-5/12 hidden md:block text-white">Jan 2019 - July 2022</div>
+        <div class="z-20 flex items-center order-1 bg-yellow-400 shadow-xl w-8 h-8 rounded-full">
           <h1 class="mx-auto text-white font-semibold text-lg"></h1>
         </div>
         <div class="order-1 rounded-xl shadow-xl w-10/12 md:w-5/12">
@@ -54,8 +54,8 @@
       
       <!-- right timeline -->
       <div class="mb-8 flex justify-start md:justify-between gap-x-5 items-center w-full right-timeline">
-        <div class="order-1 w-5/12 hidden md:block text-end">June 2018 - Dec 2018</div>
-        <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+        <div class="order-1 w-5/12 hidden md:block text-end text-white">June 2018 - Dec 2018</div>
+        <div class="z-20 flex items-center order-1 bg-yellow-400 shadow-xl w-8 h-8 rounded-full">
           <h1 class="mx-auto font-semibold text-lg text-white"></h1>
         </div>
         <div class="order-1 rounded-xl shadow-xl w-10/12 md:w-5/12">
@@ -80,6 +80,10 @@
     .timeline-line{
       left: 50%;
     }
+    
+    li{
+        margin-bottom: 10px;
+      }
     
     @media only screen and (max-width: 767px) {
       .timeline-line{
