@@ -13,17 +13,19 @@ const { name, position, image} = Astro.props;
 
 ---
 
-<div class="h-screen gradient-bg">
-    <div class="flex h-screen justify-center items-center text-white">
-        <div class="text-center"> 
-            <h1 class="text-4xl md:text-6xl mb-4 font-bold tracking-wider">
-                Hi, I'm <span class="text-amber-400">{name}</span>
-            </h1>
-            <h2 class="text-amber-400 text-2xl md:text-3xl mb-5">
-                {position}
-            </h2>
+<div class="h-screen bg-black">
+    <div class="flex h-screen justify-center items-center text-white md:px-16">
+        <div class="text-center md:text-left flex flex-col md:flex-row items-center gap-12 lg:gap-20"> 
+            <div>
+                <h1 class="text-4xl md:text-6xl mb-4 font-bold tracking-wider">
+                    Hi, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">{name}</span>
+                </h1>
+                <h2 class="text-amber-400 text-2xl md:text-3xl font-semibold mb-5">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">{position}</span>
+                </h2>
+            </div>
             <div class="flex justify-center">
-                <div class="rounded-full border-4 p-4">
+                <div class="rounded-full bg-white border-4 p-4 link-card">
                     <Image 
                         width={200}
                         src={image} 
