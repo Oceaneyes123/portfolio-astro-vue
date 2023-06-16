@@ -23,7 +23,7 @@ const { name, details, stacks, images } = Astro.props as Props;
         </div>
         <div class="md:w-1/2 w-full mx-auto ">
             <div class=" flex flex-wrap gap-5 justify-center">
-                {images.map(imagesrc => <div class="12/12 md:w-2/12"><Image src={imagesrc} width={400} alt="Android Image"/></div>)}
+                {images.map(imagesrc => <div class="12/12 md:w-2/12" data-aos="fade-up"><Image src={imagesrc} width={400} alt="Android Image" format="avif"/></div>)}
             </div>
         </div>
     </div>
