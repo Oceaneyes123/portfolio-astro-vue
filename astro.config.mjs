@@ -9,6 +9,7 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jezreldave.com',
+  trailingSlash: 'never',
   integrations: [vue(), tailwind(), partytown({
     config: {
       forward: ["dataLayer.push"]
