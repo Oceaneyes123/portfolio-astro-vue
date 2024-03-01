@@ -56,6 +56,9 @@ import android8 from '../img/android/android8.png'
 import bhen2 from '../img/web/bhen2.png'
 import megatalk from '../img/web/megatalk.png'
 import ebook from '../img/web/ebook.png'
+import tekmonks from '../img/web/tekmonks.png'
+import altImg from '../img/web/altImg.png'
+import pos from '../img/web/pos.png'
 
 import htmlite from '../img/personal/htmlite.png'
 import portfolio from '../img/personal/portfolio.png'
@@ -271,7 +274,7 @@ inject();
 				<ProjectWeb
 					name="Megatalking - Official Website"
 					details="This is a website to be used as an LMS or a Learning Management System to provide smooth coordination between native speaking instructors, domestic operators, and clients."
-					stacks={["Vuejs", "Vuetify", "Laravel", "HTML", "CSS", "JavaScript"]}
+					stacks={["Vuejs", "Vuetify", "Laravel", "HTML", "CSS", "JavaScript", "**Note: This was taken down this 2024**"]}
 					image={megatalk}
 					alt="Megataking"
 					url="https://megatalking.co.kr/"
@@ -279,7 +282,7 @@ inject();
 				<ProjectWeb
 					name="Blackhole Korea - Official Website"
 					details="A landing page of a client company."
-					stacks={["HTML", "CSS", "JavaScript", "Bootstrap"]}
+					stacks={["HTML", "CSS", "JavaScript", "Bootstrap", "**Note: This was taken down on 2022**"]}
 					image={bhen2}
 					alt="Blackhole Bhen"
 					url="https://bhen.co.kr/"
@@ -293,6 +296,32 @@ inject();
 					url="https://ueducms.org/webbooks/#/book-list?enc=MDAxfHN0dWRlbnR8bWVnYXRhbGtpbmc%3D%2F"
 				/>
 			</div>
+			<div class="flex flex-wrap md:flex-nowrap justify-center text-white text-center mb-10 gap-10">
+				<ProjectWeb
+					name="Tekmonks - Official Website / Blog Manager"
+					details="Tekmonks' official website. A company that provides IT services and solutions. Under this, there is also a blog manager for managing the company's blog."
+					stacks={["Nodejs", "HTML", "CSS", "JavaScript"]}
+					image={tekmonks}
+					alt="Megataking"
+					url="https://tekmonks.com"
+				/>
+				<ProjectWeb
+					name="WiseTechSolution - Internal Reports System"
+					details="A system to manage internal reports of WiseTechSolution. The system automates the reports by fetching data from database and pre-generated spreadsheets."
+					stacks={["HTML", "CSS", "Vue", "VueBootstrap", "Javascript", "Laravel", "MySQL"]}
+					image={altImg}
+					alt="WiseTechSolution"
+					url="#"
+				/>
+				<ProjectWeb
+					name="MeritEHS - Employee Management System"
+					details="An employee management system for Merit Technologies"
+					stacks={["HTML", "CSS", "Vue", "VueBootstrap", "Javascript", "Laravel", "MySQL"]}
+					image={altImg}
+					alt="WiseTechSolution"
+					url="#"
+				/>
+			</div>	
 			<div class="mb-5 text-xl text-center font-medium text-cyan-700">Personal Projects</div>
 			<div class="flex flex-wrap md:flex-nowrap justify-center text-white text-center mb-10 gap-10">
 				<ProjectWeb
@@ -318,6 +347,16 @@ inject();
 					image={throughtheglass}
 					alt="Through the Glass Creatives - Blog Page"
 					url="https://throughtheglasscreatives.vercel.app/"
+				/>
+			</div>
+			<div class="flex flex-wrap md:flex-nowrap justify-center text-white text-center mb-10 gap-10">
+				<ProjectWeb
+					name="Boomer Enterprise -  POS System"
+					details="A full stack POS system for Boomer Enterprise; managing customers, products, and orders, and printing receipts"
+					stacks={["Vuejs", "Vuetify", "Express", "MongoDB", "HTML", "CSS", "JavaScript"]}
+					image={pos}
+					alt="Boomer Enterprise"
+					url="#"
 				/>
 			</div>
 		</Portfolio>
