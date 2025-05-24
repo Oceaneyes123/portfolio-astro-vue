@@ -15,9 +15,8 @@ export interface Props {
 
 <div class="bg-gray-900 p-5 md:w-3/12 flex flex-col card rounded-3xl">
     <div class="flex flex-col text-left mb-auto">
-        <div class="w-full mb-5">
-            <div class="flex justify-center" data-aos="zoom-in"  data-aos-duration="2000" data-aos-anchor-placement="center-bottom">
-               <Image src={image} width={1080} format="avif"  alt={alt} class="h-48 w-auto">
+        <div class="w-full mb-5">            <div class="flex justify-center cursor-pointer project-image" data-aos="zoom-in"  data-aos-duration="2000" data-aos-anchor-placement="center-bottom">
+               <Image src={image} width={1080} format="avif"  alt={alt} class="h-48 w-auto transition-transform hover:scale-105">
             </div>
         </div>
         <div class="my-auto mb-auto flex-grow-1">
@@ -74,17 +73,20 @@ export interface Props {
 
 <script define:vars={{ name }}>
     const modalId = `project-modal-${name.toLowerCase().replace(/\s+/g, '-')}`;
-    
-    function initializeModal() {        const modal = document.getElementById(modalId);
+      function initializeModal() {        
+        const modal = document.getElementById(modalId);
         const viewMoreButton = modal.parentElement.querySelector('.view-more-button');
+        const projectImage = modal.parentElement.querySelector('.project-image');
         const closeButton = modal.querySelector('.close-modal-button');
         const modalOverlay = modal.querySelector('[data-modal-overlay]');
-        
-        viewMoreButton.addEventListener('click', () => {
+          function openModal() {
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
-        });
+        }
+
+        viewMoreButton.addEventListener('click', openModal);
+        projectImage.addEventListener('click', openModal);
         
         function closeModal() {
             modal.classList.add('hidden');
