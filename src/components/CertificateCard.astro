@@ -5,8 +5,18 @@ export interface Props {
     title: string;
     image: ImageMetadata;
     validityUrl: string;
+    tag: 'Project Management' | 'Artificial Intelligence' | 'Cloud Computing' | 'Software Engineering';
 }
-const { title, image, validityUrl } = Astro.props;
+
+const { title, image, validityUrl, tag } = Astro.props;
+
+// Define tag colors
+const tagColors = {
+    'Project Management': 'bg-yellow-100 text-yellow-800',
+    'Artificial Intelligence': 'bg-orange-100 text-orange-800',
+    'Cloud Computing': 'bg-cyan-100 text-cyan-800',
+    'Software Engineering': 'bg-green-100 text-green-800'
+};
 
 // Generate a unique ID slug from the title for DOM elements
 const slug = title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
@@ -16,11 +26,13 @@ const modalImageId = `modal-image-${slug}`;
 const closeModalButtonId = `close-modal-button-${slug}`;
 ---
 
-<div class="bg-white rounded-xl shadow-lg p-5 flex flex-col items-center w-80 certificate-card hover:text-white">
-    <div id={imageTriggerId} class="cursor-pointer">
-        <Image src={image} alt={title} width={240} class="rounded-md mb-4" />
+<div class="bg-white rounded-xl shadow-lg p-5 flex flex-col items-center w-80 certificate-card hover:text-white">    <div id={imageTriggerId} class="cursor-pointer">
+        <Image src={image} alt={title} width={240} class="rounded-md mb-4 transition-transform hover:scale-105" />
     </div>
     <div class="font-semibold text-lg text-center mb-2">{title}</div>
+    <div class={`px-3 py-1 rounded-full text-sm font-medium mb-3 ${tagColors[tag]}`}>
+        {tag}
+    </div>
     <button onclick={`window.open('${validityUrl}', '_blank')`} class="px-4 py-2 bg-cyan-600 hover:bg-cyan-800 text-white rounded-lg mt-2 transition">Check Validity</button>
 
     <!-- Modal for displaying the certificate -->
