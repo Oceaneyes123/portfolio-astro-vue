@@ -9,7 +9,7 @@ import logo from '../img/logo.png'
           <Image src={logo} height={48} class="h-9 mr-3" alt="Jezrel Dave Logo" />
           <div class="text-2xl -ml-2 font-medium logo-text">E V</div>
       </a>
-      <button id="button" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="true">
+      <button id="mobile-menu-toggle" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
       </button>
@@ -45,18 +45,31 @@ import logo from '../img/logo.png'
   </style>
   
   <script>
-    const mobileMenuButton = document.querySelectorAll('#button')
-    mobileMenuButton.forEach(button => {
-        button.addEventListener('click', () => {
-            document.getElementById("navbar-default").classList.toggle("hidden")
-        })
-    })
-    
-    const mobileMenu = document.querySelectorAll('#navbar-default')
-    mobileMenu.forEach(button => {
-        button.addEventListener('click', () => {
-            document.getElementById("navbar-default").classList.toggle("hidden")
-        })
-    })
+    const mobileMenuButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('navbar-default');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', String(!isHidden));
+
+            if (!isHidden) {
+                const firstLink = mobileMenu.querySelector('a');
+                if (firstLink instanceof HTMLAnchorElement) {
+                    firstLink.focus();
+                }
+            }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenuButton.focus();
+                }
+            });
+        });
+    }
   </script>
   
