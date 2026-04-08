@@ -50,6 +50,15 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## GitHub Actions
+
+This repository includes a basic GitHub Actions workflow at `.github/workflows/ci-cd.yml`.
+
+- Pull requests to `master` run `npm ci` and `npm run build`.
+- Pushes to `master` run the same build and upload the generated
+  `dist/` folder as a workflow artifact.
+- You can also trigger the workflow manually with `workflow_dispatch`.
+
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
