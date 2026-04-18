@@ -33,22 +33,40 @@ const { title, metacontent } = Astro.props;
 		</script>
 		
 	</head>
-	<body>
-		<slot />
-		<script src="../js/main.js"></script>
-	</body>
+        <body>
+                <a class="skip-to-content" href="#main-content">Skip to main content</a>
+                <slot />
+                <script src="../js/main.js"></script>
+        </body>
 </html>
 <style is:global>
-	:root {
+        :root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+        }
+        html {
+                font-family: system-ui, sans-serif;
+                background-color: #F6F6F6;
+        }
+        .skip-to-content {
+                position: absolute;
+                top: 0.75rem;
+                left: 50%;
+                transform: translate(-50%, -120%);
+                background-color: #ffde59;
+                color: #1b262c;
+                padding: 0.75rem 1.25rem;
+                border-radius: 0.75rem;
+                font-weight: 600;
+                transition: transform 0.3s ease;
+                z-index: 100;
+        }
+        .skip-to-content:focus {
+                transform: translate(-50%, 0);
+                outline: 3px solid #1b262c;
+        }
+        code {
+                font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+                        Bitstream Vera Sans Mono, Courier New, monospace;
+        }
 </style>
