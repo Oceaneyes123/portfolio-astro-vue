@@ -98,10 +98,21 @@ const { name, position, image, image2 } = Astro.props;
         background: linear-gradient(135deg, #f0f0f0 60%, #e0e7ff 100%);
     }
 
+    @media (prefers-reduced-motion: reduce) {
+        .flipper {
+            transition: none;
+        }
+
+        .flip-container:hover .flipper,
+        .flip-container:focus-within .flipper {
+            transform: none;
+        }
+    }
+
 @keyframes gradient {
-	0% {
-		background-position: 0% 75%;
-	}
+        0% {
+                background-position: 0% 75%;
+        }
 	50% {
 		background-position: 100% 25%;
 	}
