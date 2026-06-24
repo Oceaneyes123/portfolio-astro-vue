@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev --host",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
+    "check": "astro check",
     "astro": "astro"
   },
   "dependencies": {
@@ -14,12 +15,14 @@
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
-    "@astrojs/vue": "^5.1.0",
     "@fontsource/poppins": "^5.2.6",
     "@vercel/analytics": "^1.5.0",
     "aos": "^2.3.4",
     "astro": "^5.13.8",
-    "tailwindcss": "^3.4.17",
-    "vue": "^3.5.18"
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.9.2"
   }
 }
