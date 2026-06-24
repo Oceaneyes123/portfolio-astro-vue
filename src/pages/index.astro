@@ -176,6 +176,16 @@ const personalProjectRows = chunkProjects(personalProjects);
 	</main>
 </Layout>
 
+<script>
+	import AOS from 'aos';
+	import 'aos/dist/aos.css';
+
+	AOS.init({
+		once: true,
+		duration: 800,
+	});
+</script>
+
 <style is:global>
 	@font-face {
 		font-display: swap;
