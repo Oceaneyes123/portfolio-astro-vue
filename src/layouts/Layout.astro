@@ -4,9 +4,17 @@ import { inject } from '@vercel/analytics';
 export interface Props {
 	title: string;
 	metacontent: string;
+	canonicalUrl?: string;
+	ogImage?: string;
 }
 
-const { title, metacontent } = Astro.props;
+const {
+	title,
+	metacontent,
+	canonicalUrl = 'https://jezreldave.com',
+	ogImage = 'https://jezreldave.com/og-image.png',
+} = Astro.props;
+
 inject();
 ---
 
@@ -14,17 +22,27 @@ inject();
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={metacontent}>
-		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={metacontent} />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Jezrel Dave Sondia" />
+		<link rel="canonical" href={canonicalUrl} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		
-		<meta property="og:title" content="Jezrel Dave Sondia - A Full Stack Developer" />
+
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={metacontent} />
 		<meta property="og:type" content="website" />
-		<meta property="og:image" content="/favicon.svg" />
-		<meta property="og:url" content="https://jezreldave.com" />
-		
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:site_name" content="Jezrel Dave Sondia Portfolio" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={metacontent} />
+		<meta name="twitter:image" content={ogImage} />
+
 		<script type="text/partytown" defer src="/_vercel/insights/script.js"></script>
 		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-G0Q4NQGWCH"></script>
 		<script type="text/partytown">
@@ -34,22 +52,24 @@ inject();
 
 			gtag('config', 'G-G0Q4NQGWCH');
 		</script>
-		
 	</head>
 	<body>
 		<slot />
 		<script src="../js/main.js"></script>
 	</body>
 </html>
+
 <style is:global>
 	:root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
 	}
+
 	html {
 		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		background-color: #f6f6f6;
 	}
+
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
