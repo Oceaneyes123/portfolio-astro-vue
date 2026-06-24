@@ -1,5 +1,6 @@
 ---
 import '@fontsource/poppins';
+import { getCollection } from 'astro:content';
 
 import Layout from '../layouts/Layout.astro';
 import Stacks from '../layouts/Stacks.astro';
@@ -18,13 +19,55 @@ import CertificateCard from '../components/CertificateCard.astro';
 import picvector from '../img/picvector.png';
 import picvector2 from '../img/picvector2.png';
 
-import {
-	androidProjects,
-	certificates,
-	personalProjectRows,
-	stackGroups,
-	webProjectRows,
-} from '../data/portfolio';
+import { certificates, projectImages, stackGroups } from '../data/portfolio';
+
+const projectEntries = await getCollection('projects');
+const projects = projectEntries
+	.map((entry) => ({ ...entry.data }))
+	.sort((a, b) => a.order - b.order);
+
+const androidProjects = projects
+	.filter((project) => project.category === 'android')
+	.map((project) => ({
+		name: project.title,
+		details: project.description,
+		stacks: project.stack,
+		images: (project.imageKeys ?? [])
+			.map((key) => projectImages[key as keyof typeof projectImages])
+			.filter(Boolean),
+	}));
+
+const webProjects = projects
+	.filter((project) => project.category === 'web')
+	.map((project) => ({
+		name: project.title,
+		details: project.description,
+		stacks: project.stack,
+		image: projectImages[project.imageKey as keyof typeof projectImages],
+		alt: project.alt,
+		url: project.url ?? '#',
+	}));
+
+const personalProjects = projects
+	.filter((project) => project.category === 'personal')
+	.map((project) => ({
+		name: project.title,
+		details: project.description,
+		stacks: project.stack,
+		image: projectImages[project.imageKey as keyof typeof projectImages],
+		alt: project.alt,
+		url: project.url ?? '#',
+	}));
+
+const chunkProjects = (items: typeof webProjects, size = 3) =>
+	items.reduce((rows, item, index) => {
+		if (index % size === 0) rows.push([]);
+		rows[rows.length - 1].push(item);
+		return rows;
+	}, [] as typeof webProjects[]);
+
+const webProjectRows = chunkProjects(webProjects);
+const personalProjectRows = chunkProjects(personalProjects);
 ---
 
 <Layout
