@@ -1,23 +1,23 @@
 import { defineConfig } from 'astro/config';
-import vue from "@astrojs/vue";
-import tailwind from "@astrojs/tailwind";
-import partytown from "@astrojs/partytown";
-import sitemap from "@astrojs/sitemap";
-
-import mdx from "@astrojs/mdx";
+import vue from '@astrojs/vue';
+import tailwind from '@astrojs/tailwind';
+import partytown from '@astrojs/partytown';
+import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jezreldave.com',
   trailingSlash: 'never',
-  integrations: [vue(), tailwind(), partytown({
-    config: {
-      forward: ["dataLayer.push"]
-    }
-  }), sitemap(), mdx()],
-  experimental: {
-    assets: true
-  }
+  integrations: [
+    vue(),
+    tailwind(),
+    partytown({
+      config: {
+        forward: ['dataLayer.push'],
+      },
+    }),
+    sitemap(),
+    mdx(),
+  ],
 });
-
-//test
