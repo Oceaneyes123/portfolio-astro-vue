@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import vue from '@astrojs/vue';
 import tailwind from '@astrojs/tailwind';
 import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
@@ -10,7 +9,6 @@ export default defineConfig({
   site: 'https://jezreldave.com',
   trailingSlash: 'never',
   integrations: [
-    vue(),
     tailwind(),
     partytown({
       config: {
