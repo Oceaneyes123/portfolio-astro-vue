@@ -112,113 +112,23 @@ export const certificates = [
   { title: 'Introduction to Software Engineering', image: introToSoftwareEng, validityUrl: 'https://coursera.org/verify/G5040ET63ZSB', tag: 'Software Engineering' },
 ];
 
-export const androidProjects = [
-  {
-    name: 'U Education',
-    details: 'U Education is a mobile application providing B2B services for online English academies. This was used by Korean students of the company.',
-    stacks: ['Java', 'XML'],
-    images: [android1, android2, android3, android4, android5, android6, android7, android8],
-  },
-];
-
-export const webProjectRows = [
-  [
-    {
-      name: 'Megatalking - Official Website',
-      details: 'A learning management website built to coordinate native-speaking instructors, domestic operators, and clients.',
-      stacks: ['Vue.js', 'Vuetify', 'Laravel', 'HTML', 'CSS', 'JavaScript', 'Note: This was taken down in 2024'],
-      image: megatalk,
-      alt: 'Megatalking official website',
-      url: 'https://megatalking.co.kr/',
-    },
-    {
-      name: 'Blackhole Korea - Official Website',
-      details: 'A landing page built for a client company.',
-      stacks: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Note: This was taken down in 2022'],
-      image: bhen2,
-      alt: 'Blackhole Korea website',
-      url: 'https://bhen.co.kr/',
-    },
-    {
-      name: 'UEDU e-Books',
-      details: 'A course material library for MegaTalking clients and students.',
-      stacks: ['Vue.js', 'Vuetify', 'Laravel', 'HTML', 'CSS', 'JavaScript'],
-      image: ebook,
-      alt: 'UEDU e-Books',
-      url: 'https://ueducms.org/webbooks/#/book-list?enc=MDAxfHN0dWRlbnR8bWVnYXRhbGtpbmc%3D%2F',
-    },
-  ],
-  [
-    {
-      name: 'Tekmonks - Official Website / Blog Manager',
-      details: "Tekmonks' official website and blog manager for publishing company articles.",
-      stacks: ['Node.js', 'HTML', 'CSS', 'JavaScript'],
-      image: tekmonks,
-      alt: 'Tekmonks official website',
-      url: 'https://tekmonks.com',
-    },
-    {
-      name: 'WiseTechSolution - Internal Reports System',
-      details: 'An internal reporting system that automates reports by fetching data from databases and pre-generated spreadsheets.',
-      stacks: ['HTML', 'CSS', 'Vue', 'VueBootstrap', 'JavaScript', 'Laravel', 'MySQL'],
-      image: altImg,
-      alt: 'WiseTechSolution internal reports system',
-      url: '#',
-    },
-    {
-      name: 'MeritEHS - Employee Management System',
-      details: 'An employee management system for Merit Technologies.',
-      stacks: ['HTML', 'CSS', 'Vue', 'VueBootstrap', 'JavaScript', 'Laravel', 'MySQL'],
-      image: altImg,
-      alt: 'MeritEHS employee management system',
-      url: '#',
-    },
-  ],
-];
-
-export const personalProjectRows = [
-  [
-    {
-      name: 'Jezrel Dave Sondia - Personal Portfolio',
-      details: 'A personal portfolio website built to showcase projects, experience, certificates, and contact information.',
-      stacks: ['Vue.js', 'Vuetify', 'HTML', 'CSS', 'JavaScript'],
-      image: portfolio,
-      alt: 'Jezrel Dave Sondia personal portfolio',
-      url: 'https://jezreldave.vercel.app/',
-    },
-    {
-      name: 'HTMLite - HTML & CSS Lite Compiler',
-      details: 'A browser-based HTML and CSS compiler made with Vue.',
-      stacks: ['Vue.js', 'Vuetify', 'HTML', 'CSS', 'JavaScript'],
-      image: htmlite,
-      alt: 'HTMLite HTML and CSS compiler',
-      url: 'https://htmlite.vercel.app/',
-    },
-    {
-      name: 'Through the Glass Creatives - Blog Page',
-      details: 'A simple blog page made for Through the Glass Creatives.',
-      stacks: ['Vue.js', 'Vuetify', 'HTML', 'CSS', 'JavaScript'],
-      image: throughtheglass,
-      alt: 'Through the Glass Creatives blog page',
-      url: 'https://throughtheglasscreatives.vercel.app/',
-    },
-  ],
-  [
-    {
-      name: 'Boomer Enterprise - POS System',
-      details: 'A full-stack POS system for managing customers, products, orders, and receipt printing.',
-      stacks: ['Vue.js', 'Vuetify', 'Express', 'MongoDB', 'HTML', 'CSS', 'JavaScript'],
-      image: pos,
-      alt: 'Boomer Enterprise POS system',
-      url: '#',
-    },
-    {
-      name: '3D Portfolio Website',
-      details: 'A 3D portfolio website made with Three.js.',
-      stacks: ['React', 'Three.js', 'Vite', 'Tailwind CSS'],
-      image: portfolio3D,
-      alt: '3D portfolio website',
-      url: 'https://virtual.jezreldave.com/',
-    },
-  ],
-];
+export const projectImages = {
+  android1,
+  android2,
+  android3,
+  android4,
+  android5,
+  android6,
+  android7,
+  android8,
+  bhen2,
+  megatalk,
+  ebook,
+  tekmonks,
+  altImg,
+  pos,
+  htmlite,
+  portfolio,
+  throughtheglass,
+  portfolio3D,
+};
