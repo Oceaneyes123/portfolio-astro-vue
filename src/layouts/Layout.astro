@@ -1,5 +1,6 @@
 ---
 import { inject } from '@vercel/analytics';
+import SEO from '../components/SEO.astro';
 
 export interface Props {
 	title: string;
@@ -8,12 +9,7 @@ export interface Props {
 	ogImage?: string;
 }
 
-const {
-	title,
-	metacontent,
-	canonicalUrl = 'https://jezreldave.com',
-	ogImage = 'https://jezreldave.com/og-image.png',
-} = Astro.props;
+const { title, metacontent, canonicalUrl, ogImage } = Astro.props;
 
 inject();
 ---
@@ -22,26 +18,10 @@ inject();
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={metacontent} />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="robots" content="index, follow" />
-		<meta name="author" content="Jezrel Dave Sondia" />
-		<link rel="canonical" href={canonicalUrl} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={metacontent} />
-		<meta property="og:type" content="website" />
-		<meta property="og:image" content={ogImage} />
-		<meta property="og:url" content={canonicalUrl} />
-		<meta property="og:site_name" content="Jezrel Dave Sondia Portfolio" />
-
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={metacontent} />
-		<meta name="twitter:image" content={ogImage} />
+		<SEO title={title} description={metacontent} canonicalUrl={canonicalUrl} ogImage={ogImage} />
 
 		<script type="text/partytown" defer src="/_vercel/insights/script.js"></script>
 		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-G0Q4NQGWCH"></script>
@@ -55,7 +35,6 @@ inject();
 	</head>
 	<body>
 		<slot />
-		<script src="../js/main.js"></script>
 	</body>
 </html>
 
