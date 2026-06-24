@@ -1,0 +1,37 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl = Astro.site?.toString() ?? 'https://jezreldave.com',
+  ogImage = '/og-image.png',
+} = Astro.props;
+
+const resolvedOgImage = new URL(ogImage, Astro.site ?? canonicalUrl).toString();
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Jezrel Dave Sondia" />
+<link rel="canonical" href={canonicalUrl} />
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:image" content={resolvedOgImage} />
+<meta property="og:image:alt" content="Jezrel Dave Sondia portfolio preview" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:site_name" content="Jezrel Dave Sondia Portfolio" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={resolvedOgImage} />
