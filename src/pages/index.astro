@@ -83,6 +83,75 @@ const personalProjectRows = chunkProjects(personalProjects);
 			image2={picvector2}
 		/>
 
+		<section class="space-y-16 bg-slate-950 px-5 py-16 text-white">
+			<div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+				<div class="overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl shadow-slate-950/40">
+					<mux-player
+						playback-id="lZhaL3h8iXxjXiYqDpr65Iq4pvVeSSMr02lkmZ6JMXk8"
+						metadata-video-title="Sign Language Detection Project"
+						accent-color="#22d3ee"
+						stream-type="on-demand"
+						thumbnail-time="34"
+						class="featured-video"
+					></mux-player>
+				</div>
+
+				<div>
+					<div class="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">Featured Project</div>
+					<h2 class="text-3xl font-bold leading-tight md:text-5xl">Sign Language Detection</h2>
+					<p class="mt-5 max-w-xl text-base leading-8 text-slate-300">
+						A machine learning project that detects sign language gestures and translates them into readable output, built to connect real-time computer vision with accessible communication.
+					</p>
+					<div class="mt-6 flex flex-wrap gap-2">
+						<span class="rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">Machine Learning</span>
+						<span class="rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">Python</span>
+						<span class="rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">Computer Vision</span>
+						<span class="rounded-full bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Accessibility</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+				<div class="lg:order-2">
+					<div class="overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl shadow-slate-950/40">
+						<iframe
+							src="https://world.jezreldave.com/"
+							title="3D Car Simulation Game"
+							loading="lazy"
+							allow="fullscreen; gamepad; accelerometer; gyroscope"
+							allowfullscreen
+							class="featured-frame"
+						></iframe>
+					</div>
+				</div>
+
+				<div class="lg:order-1">
+					<div class="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">Featured Project</div>
+					<h2 class="text-3xl font-bold leading-tight md:text-5xl">3D Car Simulation</h2>
+					<p class="mt-5 max-w-xl text-base leading-8 text-slate-300">
+						A playful Three.js driving experience where visitors can control a car and interact with a small 3D environment directly in the browser.
+					</p>
+					<div class="mt-6 flex flex-wrap gap-2">
+						<span class="rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">Three.js</span>
+						<span class="rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">3D Web</span>
+						<span class="rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">Interactive Game</span>
+						<span class="rounded-full bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-200">Browser Simulation</span>
+					</div>
+					<a
+						href="https://world.jezreldave.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="mt-8 inline-flex items-center rounded-lg bg-amber-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-amber-300/40"
+					>
+						Open Full Experience
+						<svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</section>
+
 		<Stacks id="stacks">
 			{stackGroups.map((group) => (
 				<>
@@ -143,7 +212,7 @@ const personalProjectRows = chunkProjects(personalProjects);
 
 			<div class="mb-5 text-xl text-center font-medium text-cyan-700">Web Development</div>
 			{webProjectRows.map((row) => (
-				<div class="flex flex-wrap md:flex-nowrap justify-center text-white text-center mb-10 gap-10">
+				<div class="mx-auto mb-8 grid max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-3">
 					{row.map((project) => (
 						<ProjectWeb
 							name={project.name}
@@ -159,7 +228,7 @@ const personalProjectRows = chunkProjects(personalProjects);
 
 			<div class="mb-5 text-xl text-center font-medium text-cyan-700">Personal Projects</div>
 			{personalProjectRows.map((row) => (
-				<div class="flex flex-wrap md:flex-nowrap justify-center text-white text-center mb-10 gap-10">
+				<div class="mx-auto mb-8 grid max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-3">
 					{row.map((project) => (
 						<ProjectWeb
 							name={project.name}
@@ -185,6 +254,7 @@ const personalProjectRows = chunkProjects(personalProjects);
 		duration: 800,
 	});
 </script>
+<script is:inline type="module" src="https://cdn.jsdelivr.net/npm/@mux/mux-player"></script>
 
 <style is:global>
 	@font-face {
@@ -197,5 +267,18 @@ const personalProjectRows = chunkProjects(personalProjects);
 
 	body {
 		font-family: 'Poppins', sans-serif;
+	}
+
+	.featured-video {
+		aspect-ratio: 16 / 9;
+		display: block;
+		width: 100%;
+	}
+
+	.featured-frame {
+		aspect-ratio: 16 / 9;
+		border: 0;
+		display: block;
+		width: 100%;
 	}
 </style>
