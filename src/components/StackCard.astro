@@ -9,10 +9,11 @@ export interface Props {
 }
 
 const { name, image, alt, aspectRatio, width } = Astro.props;
+const height = Math.round(width / aspectRatio);
 ---
 
 <div class="card flex flex-col justify-center items-center bg-white rounded-lg p-5 w-48 stack-card hover:text-white">
-    <Image src={image} alt={alt} width={width} height={aspectRatio} format="avif"/>
+    <Image src={image} alt={alt} width={width} height={height} format="avif"/>
 
     <div class="text-center pt-5">{name}</div>
 </div>

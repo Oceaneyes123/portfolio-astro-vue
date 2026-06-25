@@ -9,7 +9,7 @@ stack:
   - HTML
   - CSS
   - JavaScript
-  - Note: This was taken down in 2024
+  - "Note: This was taken down in 2024"
 imageKey: megatalk
 alt: Megatalking official website
 url: https://megatalking.co.kr/

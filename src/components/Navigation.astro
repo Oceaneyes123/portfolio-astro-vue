@@ -48,14 +48,14 @@ import logo from '../img/logo.png'
     const mobileMenuButton = document.querySelectorAll('#button')
     mobileMenuButton.forEach(button => {
         button.addEventListener('click', () => {
-            document.getElementById("navbar-default").classList.toggle("hidden")
+            document.getElementById("navbar-default")?.classList.toggle("hidden")
         })
     })
     
     const mobileMenu = document.querySelectorAll('#navbar-default')
     mobileMenu.forEach(button => {
         button.addEventListener('click', () => {
-            document.getElementById("navbar-default").classList.toggle("hidden")
+            document.getElementById("navbar-default")?.classList.toggle("hidden")
         })
     })
   </script>

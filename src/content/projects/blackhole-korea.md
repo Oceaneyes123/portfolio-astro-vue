@@ -7,7 +7,7 @@ stack:
   - CSS
   - JavaScript
   - Bootstrap
-  - Note: This was taken down in 2022
+  - "Note: This was taken down in 2022"
 imageKey: bhen2
 alt: Blackhole Korea website
 url: https://bhen.co.kr/

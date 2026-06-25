@@ -4,7 +4,7 @@ import Navigation from '../../components/Navigation.astro';
 
 import BlogCard from '../../components/BlogCard.astro';
 
-const blogList = await Astro.glob("./*.mdx")
+const blogList = Object.values(import.meta.glob("./*.mdx", { eager: true }));
 
 ---
 

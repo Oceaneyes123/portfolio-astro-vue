@@ -5,7 +5,7 @@ export interface Props {
 	title: string;
 	image: ImageMetadata;
 	validityUrl: string;
-	tag: 'Project Management' | 'Artificial Intelligence' | 'Cloud Computing' | 'Software Engineering';
+	tag: string;
 }
 
 const { title, image, validityUrl, tag } = Astro.props;
@@ -15,7 +15,7 @@ const tagColors = {
 	'Artificial Intelligence': 'bg-orange-100 text-orange-800',
 	'Cloud Computing': 'bg-cyan-100 text-cyan-800',
 	'Software Engineering': 'bg-green-100 text-green-800',
-};
+} as Record<string, string>;
 ---
 
 <article class="bg-white rounded-xl shadow-lg p-5 flex flex-col items-center w-80 certificate-card hover:text-white">
@@ -28,7 +28,7 @@ const tagColors = {
 		class="rounded-md mb-4 transition-transform hover:scale-105"
 	/>
 	<div class="font-semibold text-lg text-center mb-2">{title}</div>
-	<div class={`px-3 py-1 rounded-full text-sm font-medium mb-3 ${tagColors[tag]}`}>
+	<div class={`px-3 py-1 rounded-full text-sm font-medium mb-3 ${tagColors[tag] ?? 'bg-gray-100 text-gray-800'}`}>
 		{tag}
 	</div>
 	<a href={validityUrl} target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-800 text-white rounded-lg mt-2 transition">
