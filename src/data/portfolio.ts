@@ -40,6 +40,8 @@ import htmlite from '../img/personal/htmlite.png';
 import portfolio from '../img/personal/portfolio.png';
 import throughtheglass from '../img/personal/throughtheglass.png';
 import portfolio3D from '../img/personal/3dportfolio.png';
+import fslLens from '../img/personal/fsl-lens.png';
+import carGame from '../img/personal/car-game.png';
 
 import agileProjectManagement from '../certificates/Agile Project Management.png';
 import foundationsOfProjectManagement from '../certificates/Foundations of Project Management.png';
@@ -131,4 +133,6 @@ export const projectImages = {
   portfolio,
   throughtheglass,
   portfolio3D,
+  fslLens,
+  carGame,
 };
